@@ -87,6 +87,8 @@ GEM
       activerecord (>= 3.0.3)
       arel (>= 2.0.6)
       rgeo (>= 0.3.20)
+    rgeo-geojson (0.2.3)
+      rgeo (>= 0.3.7)
     sass (3.2.7)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -117,5 +119,6 @@ DEPENDENCIES
   pg
   rails (= 3.2.13)
   rgeo
+  rgeo-geojson
   sass-rails
   uglifier
