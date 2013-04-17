@@ -13,8 +13,13 @@ locations = {
   :kc   => [39.12, 94.60]
 }
 
+Photo.delete_all
+
+image = File.open(File.join(Rails.root, "public", "berlin.jpg"))
+
 locations.values.each do |coordinate|
   photo = Photo.new
+  photo.image = image
   photo.lnglat = "POINT(#{coordinate[1]} #{coordinate[0]})"
   photo.save
 end
