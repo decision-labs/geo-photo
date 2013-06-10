@@ -29,6 +29,11 @@ gem 'jquery-rails'
 gem 'paperclip'
 gem 'aws-sdk'
 
+group :develolpment do
+  gem 'foreman'
+  gem 'thin'
+end
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
