@@ -1,5 +1,5 @@
 class Photo < ActiveRecord::Base
-  attr_accessible :lnglat
+  attr_accessible :lnglat, :image
 
   GEOG_FACTORY ||= RGeo::Geographic.spherical_factory(:srid => 4326)
   set_rgeo_factory_for_column(:lnglat, GEOG_FACTORY)
@@ -10,6 +10,8 @@ class Photo < ActiveRecord::Base
 
   has_attached_file :image,
                   :styles => { :thumbnail => "100x100#" },
+                  :path => ":rails_root/public/system/:attachment/:id/:style/:filename",
+                  :url => "/system/:attachment/:id/:style/:filename",
                   :storage => :s3,
                   :s3_credentials => S3_CREDENTIALS
 
