@@ -19,11 +19,9 @@ class PhotosController < ApplicationController
   end
 
   def create
-    @photo = Photo.new
-    @photo.lnglat = "POINT(#{params[:lng]} #{params[:lat]}"
-    @photo.image = params[:image]
+    @photo = Photo.new(params[:photo])
+    @photo.image = params[:photo][:image]
     @photo.save
-
     respond_with(@photo)
   end
 end
