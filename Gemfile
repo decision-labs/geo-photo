@@ -27,7 +27,7 @@ end
 gem 'jquery-rails'
 
 gem 'paperclip'
-gem 'aws-sdk'
+gem 'aws-sdk', '>= 1.27.0'
 
 group :develolpment do
   gem 'foreman'
